@@ -32,23 +32,28 @@ public class Assignment2
         {
             System.out.println("Enter the student's first name: ");
             fName = in.nextLine();
-            outWriter.print(fName + "\t");
+            outWriter.print(fName);  //Not accepting input for fName, skips to lName.
+            outWriter.print("\t\t");
             System.out.println("\n");
             System.out.print("Enter the student's last name: ");
             lName = in.nextLine();
-            outWriter.print(lName + "\t");
+            outWriter.print(lName);
+            outWriter.print("\t\t");
             System.out.println("\n");
             System.out.print("Enter the student's PSID: ");
             psid = in.nextInt();
-            outWriter.print(psid + "\t");
+            outWriter.print(psid); //Need to add validity check on this.
+            outWriter.print("\t\t");
             System.out.println("\n");
             System.out.print("Enter the student's grade in the first class: ");
             gradeOne = in.nextDouble();
-            outWriter.print(gradeOne + "\t");
+            outWriter.print(gradeOne);
+            outWriter.print("\t\t");
             System.out.println("\n");
             System.out.print("Enter the student's grade in the second class: ");
             gradeTwo = in.nextDouble();
-            outWriter.print(gradeTwo + "\t");
+            outWriter.print(gradeTwo);
+            outWriter.print("\t\t");
             System.out.println("\n");
             System.out.print("Enter the student's grade in the third class: ");
             gradeThree = in.nextDouble();
@@ -187,12 +192,12 @@ public class Assignment2
                 gradePointsThree = 0.00;
             }
 
-            outWriter.print(gradePointsOne + "\t");
-            outWriter.print(gradePointsTwo + "\t");
-            outWriter.print(gradePointsThree + "\t");
+            outWriter.print(gradePointsOne + "\t\t");
+            outWriter.print(gradePointsTwo + "\t\t");
+            outWriter.print(gradePointsThree + "\t\t");
 
             gradePointsEarned = (semesterHours * gradePointsOne) + (semesterHours * gradePointsTwo) + (semesterHours * gradePointsThree);
-            outWriter.print(gradePointsEarned + "\t");
+            //outWriter.print(gradePointsEarned + "\t");
             GPA = gradePointsEarned / 9;
             outWriter.print(GPA);
             outWriter.print("\n");
