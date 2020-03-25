@@ -33,19 +33,24 @@ public class Assignment2
             System.out.println("Enter the student's first name: ");
             fName = in.nextLine();
             outWriter.print(fName + "\t");
-            System.out.print("\nEnter the student's last name: ");
+            System.out.println("\n");
+            System.out.print("Enter the student's last name: ");
             lName = in.nextLine();
             outWriter.print(lName + "\t");
-            System.out.print("\nEnter the student's PSID: ");
+            System.out.println("\n");
+            System.out.print("Enter the student's PSID: ");
             psid = in.nextInt();
             outWriter.print(psid + "\t");
-            System.out.print("\nEnter the student's grade in the first class: ");
+            System.out.println("\n");
+            System.out.print("Enter the student's grade in the first class: ");
             gradeOne = in.nextDouble();
             outWriter.print(gradeOne + "\t");
-            System.out.print("\nEnter the student's grade in the second class: ");
+            System.out.println("\n");
+            System.out.print("Enter the student's grade in the second class: ");
             gradeTwo = in.nextDouble();
             outWriter.print(gradeTwo + "\t");
-            System.out.print("\nEnter the student's grade in the third class: ");
+            System.out.println("\n");
+            System.out.print("Enter the student's grade in the third class: ");
             gradeThree = in.nextDouble();
             outWriter.print(gradeThree + "\t");
 
@@ -189,7 +194,8 @@ public class Assignment2
             gradePointsEarned = (semesterHours * gradePointsOne) + (semesterHours * gradePointsTwo) + (semesterHours * gradePointsThree);
             outWriter.print(gradePointsEarned + "\t");
             GPA = gradePointsEarned / 9;
-            outWriter.print(GPA + "\n");
+            outWriter.print(GPA);
+            outWriter.print("\n");
         }
         outWriter.close();
     }
