@@ -21,39 +21,42 @@ public class Assignment2
         double gradePointsEarned = 0.0;
         double GPA = 0.0;
         int semesterHours = 3;
+        String rounding;
 
         System.out.print("Enter the name of the file to contain output (include .txt at the end of name): ");
         fileName = in.nextLine();
         PrintWriter outWriter = new PrintWriter(fileName);
-        System.out.print("\nHow many students shall we consider? ");
+        System.out.println("\n");
+        System.out.print("How many students shall we consider? ");
         numStud = in.nextInt();
+        System.out.println("\n");
 
         for(int i = 0;i<numStud;i++)
         {
             System.out.println("Enter the student's first name: ");
             fName = in.nextLine();
             outWriter.print(fName);  //Not accepting input for fName, skips to lName.
-            outWriter.print("\t\t");
+            outWriter.print("\t");
             System.out.println("\n");
             System.out.print("Enter the student's last name: ");
             lName = in.nextLine();
             outWriter.print(lName);
-            outWriter.print("\t\t");
+            outWriter.print("\t");
             System.out.println("\n");
             System.out.print("Enter the student's PSID: ");
             psid = in.nextInt();
             outWriter.print(psid); //Need to add validity check on this.
-            outWriter.print("\t\t");
+            outWriter.print("\t");
             System.out.println("\n");
             System.out.print("Enter the student's grade in the first class: ");
             gradeOne = in.nextDouble();
             outWriter.print(gradeOne);
-            outWriter.print("\t\t");
+            outWriter.print("\t");
             System.out.println("\n");
             System.out.print("Enter the student's grade in the second class: ");
             gradeTwo = in.nextDouble();
             outWriter.print(gradeTwo);
-            outWriter.print("\t\t");
+            outWriter.print("\t");
             System.out.println("\n");
             System.out.print("Enter the student's grade in the third class: ");
             gradeThree = in.nextDouble();
@@ -192,15 +195,18 @@ public class Assignment2
                 gradePointsThree = 0.00;
             }
 
-            outWriter.print(gradePointsOne + "\t\t");
-            outWriter.print(gradePointsTwo + "\t\t");
-            outWriter.print(gradePointsThree + "\t\t");
+            outWriter.print(gradePointsOne + "\t");
+            outWriter.print(gradePointsTwo + "\t");
+            outWriter.print(gradePointsThree + "\t");
 
             gradePointsEarned = (semesterHours * gradePointsOne) + (semesterHours * gradePointsTwo) + (semesterHours * gradePointsThree);
             //outWriter.print(gradePointsEarned + "\t");
-            GPA = gradePointsEarned / 9;
-            outWriter.print(GPA);
+            GPA = gradePointsEarned / 9.0;
+            rounding = String.format("%.2f",GPA);
+            outWriter.print(rounding);
             outWriter.print("\n");
+
+            System.out.println("\n");
         }
         outWriter.close();
     }
