@@ -29,11 +29,12 @@ public class Assignment2
         System.out.println("\n");
         System.out.print("How many students shall we consider? ");
         numStud = in.nextInt();
-        System.out.println("\n");
+        in.nextLine();
 
         for(int i = 0;i<numStud;i++)
         {
-            System.out.println("Enter the student's first name: ");
+            System.out.println("\n");
+            System.out.print("Enter the student's first name: ");
             fName = in.nextLine();
             outWriter.print(fName);  //Not accepting input for fName, skips to lName.
             outWriter.print("\t");
