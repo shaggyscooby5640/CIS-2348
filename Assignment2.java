@@ -10,8 +10,9 @@ public class Assignment2
         String fileName;
         int numStud = 0;
         String fName;
+        int length;
         String lName;
-        int psid = 0;
+        String psid;
         double gradeOne = 0.0;
         double gradeTwo = 0.0;
         double gradeThree = 0.0;
@@ -36,16 +37,55 @@ public class Assignment2
             System.out.println("\n");
             System.out.print("Enter the student's first name: ");
             fName = in.nextLine();
-            outWriter.print(fName);  //Not accepting input for fName, skips to lName.
+            length = fName.length();
+            for(int j = 0;j<length;j++)    //Validity check for fName; should only be letters.
+            {
+                if(Character.isLetter(fName.charAt(j)) == false)
+                {
+                    System.out.println("Not a valid first name. Please enter a first name containing only letters.");
+                    System.out.print("Enter the student's first name: ");
+                    fName = in.nextLine();
+                    length = fName.length();
+                    j = -1;
+                }
+            }
+            outWriter.print(fName);
             outWriter.print("\t");
             System.out.println("\n");
             System.out.print("Enter the student's last name: ");
             lName = in.nextLine();
+            for(int l = 0;l<lName.length();l++)    //Validity check for lName; should only be letters.
+            {
+                if(Character.isLetter(fName.charAt(l)) == false)
+                {
+                    System.out.println("Not a valid last name. Please enter a last name containing only letters.");
+                    System.out.print("Enter the student's last name: ");
+                    lName = in.nextLine();
+                    l = -1;
+                }
+            }
             outWriter.print(lName);
             outWriter.print("\t");
             System.out.println("\n");
             System.out.print("Enter the student's PSID: ");
-            psid = in.nextInt();
+            psid = in.nextLine();
+            for(int k = 0; k<psid.length();k++)     //Validity check for PSID; should be 10 digits long and consist of only numbers.
+            {
+                if(psid.length() > 10)
+                {
+                    System.out.println("PSID too long. Please enter a PSID containing only ten numeric digits.");
+                    System.out.print("Enter the student's PSID: ");
+                    psid = in.nextLine();
+                    k = -1;
+                }
+                if(Character.isDigit(fName.charAt(k)) == false)
+                {
+                    System.out.println("Not a valid PSID. Please enter a PSID containing only ten numeric digits.");
+                    System.out.print("Enter the student's PSID: ");
+                    psid = in.nextLine();
+                    k = -1;
+                }
+            }
             outWriter.print(psid); //Need to add validity check on this.
             outWriter.print("\t");
             System.out.println("\n");
